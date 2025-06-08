@@ -123,7 +123,22 @@ body, html {
     padding: 1.5rem;
     background: #2e0a0a;
     position: relative;
+    max-height: 400px;
+    overflow-y: auto;         
+    -webkit-overflow-scrolling: touch;
 }
+
+/* Responsive para móviles/tabletas */
+@media (max-width: 870px) {
+    #sections-background {
+    flex-direction: column;
+    }
+    #sections-right {
+    max-height: none;
+    overflow-y: visible;
+    margin-top: 2rem;
+    }
+}s
 
 #sections-right h2 {
     font-size: 1.8rem;
@@ -141,7 +156,7 @@ body, html {
     color: var(--color-accent-red-light);
 }
 
-/* Efecto de desplazamiento para enlaces y íconos */
+
 #sections-right a,
 .social-icons img {
     transition: transform var(--transition-speed), color var(--transition-speed);
