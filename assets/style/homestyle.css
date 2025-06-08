@@ -1,0 +1,272 @@
+@import url('https://i.pinimg.com/736x/39/a3/20/39a320b026181de97d0a95c4ec6899d8.jpg');
+
+:root {
+    --color-bg-base: #0b0a0a;
+    --color-bg-gradient-start: #2e0a0a;
+    --color-bg-gradient-end: #0b0a0a;
+    --color-accent-red: #911111;
+    --color-accent-red-muted: #7f1d1d;
+    --color-accent-red-light: #b33a3a;
+    --color-text-light: #e3dedd;
+    --color-text-muted: #ad9a9a;
+    --color-shadow-black: rgba(0,0,0,0.6);
+    --border-radius: 1rem;
+    --transition-speed: 0.3s;
+    --max-width: 1200px;
+}
+
+/* Reset & base */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--color-bg-base);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+}
+
+#sections-background {
+    background-image: url('https://i.pinimg.com/736x/a1/88/ea/a188eacaea4a7ce87060a12c94285921.jpg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: local; 
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px var(--color-shadow-black);
+    margin-bottom: 3.5rem;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text-light);
+}
+
+/* panel izq con secciones */
+#sections-left {
+    flex: 1 1 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* secciones */
+.app-section {
+    background-color: rgba(20, 10, 10, 0.7);
+    border: 1.8px solid var(--color-accent-red-muted);
+    border-radius: var(--border-radius);
+    padding: 1.8rem 2.4rem;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(145, 17, 17, 0.4);
+    transition:
+    background-color var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease,
+    border-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+    user-select: none;
+}
+
+.app-section img {
+    width: 100%;
+    height: 130px; 
+    object-fit: cover;
+    border-radius: 12px;
+}
+.app-section:hover,
+.app-section:focus-visible {
+    background-color: rgba(145, 17, 17, 0.45);
+    border-color: var(--color-accent-red-light);
+    box-shadow: 0 0 18px var(--color-accent-red-light);
+    outline: none;
+    transform: translateY(-4px);
+}
+.app-section:active {
+    background-color: rgba(120, 10, 10, 0.65);
+    box-shadow: 0 0 14px var(--color-accent-red-muted);
+    transform: translateY(-2px);
+}
+
+.app-section h2 {
+    margin: 0 0 0.35rem 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-accent-red);
+    user-select: text;
+}
+.app-section p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    user-select: text;
+    line-height: 1.4;
+}
+
+/* panel derecho: wiki */
+#sections-right {
+    background-color: rgba(46, 10, 10, 0.75); 
+    flex: 1 1 350px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 22px var(--color-shadow-black);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: #2e0a0a;
+    position: relative;
+}
+
+#sections-right h2 {
+    font-size: 1.8rem;
+    color: var(--color-accent-red);
+    margin: 0 0 1rem 0;
+}
+
+#sections-right a {
+    color: var(--color-text-light);
+    text-decoration: underline;
+    transition: color var(--transition-speed);
+}
+
+#sections-right a:hover {
+    color: var(--color-accent-red-light);
+}
+
+/* Efecto de desplazamiento para enlaces y íconos */
+#sections-right a,
+.social-icons img {
+    transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+#sections-right a:hover,
+.social-icons img:hover {
+    transform: translateY(-5px); 
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* logo, header, home */
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: var(--max-width);
+    margin: 2rem auto 3rem;
+    padding: 0 1rem;
+}
+header img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    user-select: none;
+}
+header h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-accent-red);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: text;
+}
+
+/* House icon inline styling */
+header h1 span {
+    font-size: 2.3rem;
+    line-height: 1;
+}
+
+/* Contact and Resources section beneath */
+#bottom-info-container {
+    max-width: var(--max-width);
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    background-color: #120808;
+    box-shadow: 0 6px 16px var(--color-shadow-black);
+    border-radius: var(--border-radius);
+    color: var(--color-text-muted);
+    padding: 1.8rem 2.2rem;
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    user-select: text;
+}
+.info-block h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-accent-red);
+    user-select: text;
+}
+.info-block p {
+    margin: 0;
+    font-size: 1.04rem;
+    line-height: 1.45;
+    color: var(--color-text-muted);
+    user-select: text;
+}
+
+/* Copyright footer */
+footer {
+    max-width: var(--max-width);
+    margin: 0 auto 2rem;
+    padding: 1rem 1rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    user-select: none;
+}
+
+/* Accessibility - focus styles */
+.app-section:focus-visible {
+    outline: 2px solid var(--color-accent-red-light);
+    outline-offset: 4px;
+}
+
+/* Responsive */
+@media (max-width: 870px) {
+    #sections-background {
+        flex-direction: column;
+    }
+    #sections-right {
+        min-height: 280px;
+        margin-top: 2rem;
+    }
+    #bottom-info-container {
+        flex-direction: column;
+    }
+    .info-block {
+        flex: 1 1 100%;
+    }
+    header {
+        justify-content: center;
+    }
+}
